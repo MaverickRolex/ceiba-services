@@ -1,0 +1,2 @@
+class ServiceGroup < ApplicationRecord
+end
