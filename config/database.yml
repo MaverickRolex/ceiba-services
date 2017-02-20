@@ -1,0 +1,17 @@
+default: &default 
+  adapter: postgresql 
+  username: usuario 
+  password: 186425 
+  host: localhost 
+
+development: 
+  <<: *default 
+  database: services_development 
+
+test:
+  <<: *default 
+  database: services_test 
+
+production: 
+  <<: *default 
+  database: services_production
