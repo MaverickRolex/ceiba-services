@@ -1,0 +1,2 @@
+class UserServiceGroup < ApplicationRecord
+end
