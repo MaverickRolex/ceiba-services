@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :dashboards
 
-  scope :admin do
+  scope :admin, module: "admin" do
     resources :users
   end
 
