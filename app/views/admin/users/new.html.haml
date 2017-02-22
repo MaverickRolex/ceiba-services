@@ -1,0 +1,23 @@
+= form_for @user do |f|
+  - @user.errors.full_messages.each do |msg|
+    %li= msg
+  %ul
+    = f.label :first_name
+    = f.text_field :first_name
+    %br/
+    = f.label :last_name
+    = f.text_field :last_name
+    %br/
+    = f.label :password
+    = f.password_field :password
+    %br/
+    = f.label :password_confirmation
+    = f.password_field :password_confirmation
+    %br/
+    = f.label :admin
+    = f.check_box :admin
+    %br/
+    = f.label :email
+    = f.text_field :email
+    %br/
+    = f.submit "Guardar"
