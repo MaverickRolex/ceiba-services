@@ -7,10 +7,19 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
 
+    #mySidenav.sidenav
+      %a.closebtn{:href => "javascript:void(0)", :onclick => "closeNav()"} x
+      %a{:href => "#"} About
+      %a{:href => "#"} Services
+      %a{:href => "#"} News
+      %a{:href => "#"} Contact
+
+
+
     .row#header-top
       .col-md-2.header-height.vertical-center
         .inline-block.header-height
-          %i.fa.fa-bars.menu-ico
+          %i.fa.fa-bars.menu-ico#menu-open
         .inline-block.padding-left
           = image_tag "logo.jpg", class: "logoimg logo-ico img-circle"
       .col-md-7.header-height.vertical-center
