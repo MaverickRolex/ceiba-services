@@ -1,3 +1,73 @@
 // Place all the styles related to the dashboards controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$header-height: 64px;
+
+#header-top {
+  line-height: $header-height;
+  width: 100%;
+  margin: 0px;
+
+  .logo-ico {
+    height: 50px;
+    width: 50px;
+  }
+  .menu-ico {
+    font-size: 40px;
+    line-height: $header-height;
+  }
+  .padding-left {
+    padding-left: 30px;
+  }
+  .header-height {
+    height: $header-height;
+  }
+  .vertical-center {
+    display: flex;
+    align-items: center;
+  }
+  .input-ico-style {
+    background-color: white;
+    border: none;
+  }
+  .input-style {
+    background-color: white;
+    border: none;
+    box-shadow: none;
+  }
+  .input-border {
+    border-left: 2px solid #D6D9E8;
+    border-right: 2px solid #D6D9E8;
+  }
+  .block-right {
+    margin-left: auto;
+  }
+}
+
+#header-menu {
+  line-height: 50px;
+  margin: 0px;
+  background-color: #D6D9E8;
+
+  .menu-link {
+    display: inline-block;
+    padding: 0 10px;
+  }
+  .header-height {
+    height: 50px;
+    width: 100%;
+  }
+  .vertical-center {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+.inline-block {
+  display: inline-block;
+}
