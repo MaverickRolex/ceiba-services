@@ -21,18 +21,10 @@
 .row
   .col-md-12#header-menu
     .row
-      .col-md-4
-
-      .col-md-4
+      .col-md-12
         .header-height
           .vertical-center
-            .menu-link
-              %span MENU1
-            .menu-link
-              %span MENU2
-            .menu-link
-              %span MENU3
-            .menu-link
-              %span MENU4
-
-      .col-md-4
+            - if content_for? :admins_menu #&& current_user.admin?
+              = yield :admins_menu
+            - else
+              = yield :users_menu
