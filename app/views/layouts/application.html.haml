@@ -6,6 +6,8 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    -#Header
+    = render "/layouts/shared/header"
 
     #mySidenav.sidenav
       %a.closebtn{:href => "javascript:void(0)", :onclick => "closeNav()"} x
@@ -49,10 +51,13 @@
                 .menu-link
                   %span MENU4
           .col-md-4
+
+    -#Content
     .row
       .col-md-12
+        = yield :admin_header
+        = yield :admin_content
 
-    = yield
+        = yield
 
-    .row
-      .col-md-12
+    -#Footer

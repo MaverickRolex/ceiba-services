@@ -1,32 +1,40 @@
-%table.table.table-hover
-  %thead
-    %tr
-      %th
-        ID
-      %th
-        Nombre
-      %th
-        Admin
-      %th
-        Email
-    %tbody
-      - @users.each do |user|
+.row
+  .col-sm-12
+    .clearfix
+      .pull-right
+        %button.btn.btn-secondary{:type => "button"}
+          = link_to "Nuevo Usuario", new_user_path
+.row
+  .col-sm-12
+    %table.table.table-hover
+      %thead
         %tr
-          %td
-            = user.id
-          %td
-            = user.full_name
-          %td
-            = user.admin
-          %td
-            = user.email
-          %td
-            .btn-group
-              %button.btn.btn-default.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
-                Action
-                %span.caret
-              %ul.dropdown-menu
-                %li
-                  %a{:href => "#"} Edite
-                %li
-                  %a{:href => "#"} Delete
+          %th
+            ID
+          %th
+            Nombre
+          %th
+            Admin
+          %th
+            Email
+        %tbody
+          - @users.each do |user|
+            %tr
+              %td
+                = user.id
+              %td
+                = user.full_name
+              %td
+                = user.admin
+              %td
+                = user.email
+              %td
+                .btn-group
+                  %button.btn.btn-default.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
+                    Action
+                    %span.caret
+                  %ul.dropdown-menu
+                    %li
+                      %a{:href => "#"} Edite
+                    %li
+                      %a{:href => "#"} Delete
