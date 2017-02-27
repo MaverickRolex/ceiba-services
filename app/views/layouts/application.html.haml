@@ -9,6 +9,49 @@
     -#Header
     = render "/layouts/shared/header"
 
+    #mySidenav.sidenav
+      %a.closebtn{:href => "javascript:void(0)", :onclick => "closeNav()"} x
+      %a{:href => "#"} About
+      %a{:href => "#"} Services
+      %a{:href => "#"} News
+      %a{:href => "#"} Contact
+
+
+
+    .row#header-top
+      .col-md-2.header-height.vertical-center
+        .inline-block.header-height
+          %i.fa.fa-bars.menu-ico#menu-open
+        .inline-block.padding-left
+          = image_tag "logo.jpg", class: "logoimg logo-ico img-circle"
+      .col-md-7.header-height.vertical-center
+        .input-group.input-border
+          %span.input-group-addon.basic-addon1.input-ico-style
+            %i.fa.fa-search
+          %input.form-control.input-style{:placeholder => "Search Service", :type => "text", :"aria-describedby" => "basic-addon1"}/
+      .col-md-3.header-height.vertical-center
+        .inline-block.block-right
+          %a.btn.btn-default{:href => "#"} Nuevo Servicio
+        .inline-block.block-right
+          = image_tag "logo.jpg", class: "logoimg logo-ico img-circle"
+
+    .row
+      .col-md-12#header-menu
+        .row
+          .col-md-4
+          .col-md-4
+            .header-height
+              .vertical-center
+                .menu-link
+                  %span MENU1
+                .menu-link
+                  %span MENU2
+                .menu-link
+                  %span MENU3
+                .menu-link
+                  %span MENU4
+          .col-md-4
+
     -#Content
     .row
       .col-md-12

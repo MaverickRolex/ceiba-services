@@ -1,3 +1,19 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
+$ ->
+  openNav = ->
+    document.getElementById('mySidenav').style.width = '250px'
+    return
+
+  $('#menu-open').click ->
+    openNav()
+    return
+
+  closeNav = ->
+    document.getElementById('mySidenav').style.width = '0'
+    return
+
+  $('.closebtn').click ->
+    closeNav() 
+    return
