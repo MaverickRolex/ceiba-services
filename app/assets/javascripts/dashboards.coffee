@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
   openNav = ->
-    document.getElementById('mySidenav').style.width = '250px'
+    document.getElementById('mySidenav').style.width = '220px'
     return
 
   $('#menu-open').click ->

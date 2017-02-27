@@ -1,8 +1,15 @@
 .row#header-top
 
+  #mySidenav.sidenav
+    %a.closebtn{:href => "javascript:void(0)", :onclick => "closeNav()"} x
+    %a{:href => "#"} About
+    %a{:href => "#"} Services
+    %a{:href => "#"} News
+    %a{:href => "#"} Contact
+
   .col-md-2.header-height.vertical-center
     .inline-block.header-height
-      %i.fa.fa-bars.menu-ico
+      %i.fa.fa-bars.menu-ico#menu-open
     .inline-block.padding-left
       = image_tag "logo.jpg", class: "logoimg logo-ico img-circle"
 
