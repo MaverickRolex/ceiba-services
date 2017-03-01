@@ -2,10 +2,11 @@
 
   #mySidenav.sidenav
     %a.closebtn{:href => "javascript:void(0)", :onclick => "closeNav()"} x
-    %a{:href => "#"} About
-    %a{:href => "#"} Services
-    %a{:href => "#"} News
-    %a{:href => "#"} Contact
+    = link_to "Admin", users_path
+    = link_to "About", "#"
+    = link_to "Services", "#"
+    = link_to "News", "#"
+    = link_to "Contact", "#"
 
   .col-md-2.header-height.vertical-center
     .inline-block.header-height
