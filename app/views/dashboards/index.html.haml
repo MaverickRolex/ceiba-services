@@ -1,11 +1,1 @@
-- content_for :users_menu do
-  .menu-link
-    %span= link_to "Usuarios", users_path
-  .menu-link
-    %span Clientes
-  .menu-link
-    %span Servicios
-  .menu-link
-    %span Reportes
-  .menu-link
-    %span Inventarios
+= render partial: "layouts/shared/user_menu"

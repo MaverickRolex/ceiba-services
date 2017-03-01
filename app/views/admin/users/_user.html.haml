@@ -1,0 +1,19 @@
+%tr
+  %td
+    = user.id
+  %td
+    = user.full_name
+  %td
+    = user.admin
+  %td
+    = user.email
+  %td
+    .btn-group
+      %button.btn.btn-default.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
+        Action
+        %span.caret
+      %ul.dropdown-menu
+        %li
+          = link_to "Edit", edit_user_path(user)
+        %li
+          = link_to "Delete", user_path(user.id), method: :delete
