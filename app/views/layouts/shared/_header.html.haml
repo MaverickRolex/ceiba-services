@@ -22,6 +22,7 @@
   .col-md-3.header-height.vertical-center
     .inline-block.block-right
       %a.btn.btn-default{:href => "#"} Nuevo Servicio
+      = link_to "cerrar sesion", destroy_user_session_path, method: :delete, class: "btn btn-secondary" 
     .inline-block.block-right
       = image_tag "logo.jpg", class: "logoimg logo-ico img-circle"
 
