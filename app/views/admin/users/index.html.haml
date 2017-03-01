@@ -2,38 +2,17 @@
   .col-sm-12
     .clearfix
       .pull-right
-        = link_to "Nuevo Usuario", new_user_path, class: "btn btn-secondary"
+        = link_to "Nuevo Usuario", new_user_path, class: "btn btn-secondary", remote: :true
+
 .row
   .col-sm-12
-    %table.table.table-hover
-      %thead
-        %tr
-          %th
-            ID
-          %th
-            Nombre
-          %th
-            Admin
-          %th
-            Email
-        %tbody
-          - @users.each do |user|
-            %tr
-              %td
-                = user.id
-              %td
-                = user.full_name
-              %td
-                = user.admin
-              %td
-                = user.email
-              %td
-                .btn-group
-                  %button.btn.btn-default.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
-                    Action
-                    %span.caret
-                  %ul.dropdown-menu
-                    %li
-                      = link_to "Edit", edit_user_path(user)
-                    %li
-                      = link_to "Delete", user_path(user.id), method: :delete
+    = render partial: "admin/users/users_table"
+
+#global-modal.modal.fade{:role => "dialog", :tabindex => "-1"}
+  .modal-dialog{:role => "document"}
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"}
+        %h4.modal-title Nuevo Usuario
+      .modal-body
