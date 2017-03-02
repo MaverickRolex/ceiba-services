@@ -54,6 +54,7 @@ $header-height: 64px;
   .menu-link {
     display: inline-block;
     padding: 0 10px;
+    text-decoration: none;
   }
   .header-height {
     height: 50px;
@@ -127,4 +128,18 @@ $header-height: 64px;
 
 .padding-lef {
     padding-left: 14px;
+}
+
+.user-select {
+  color: black;
+
+  &:hover {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    transition: 0.5s;
+  }
+  &:focus {
+    color: black;
+  }
 }
