@@ -33,7 +33,8 @@
       .col-md-12
         .header-height
           .vertical-center
-            - if content_for? :admins_menu #&& current_user.admin?
+            = render "/layouts/shared/menu"
+            - if current_user.admin?
               = yield :admins_menu
             - else
               = yield :users_menu
