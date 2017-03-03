@@ -1,0 +1,3 @@
+<% if @user.destroyed? %>
+  $("tr[data-user-id='<%= @user.id %>']").remove();
+<% end %>

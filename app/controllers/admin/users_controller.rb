@@ -19,19 +19,13 @@ class Admin::UsersController < Admin::BaseController
 
   def update
     @user = User.find(params[:id])
-    if user_update
-      flash[:notice] = "Usuario actualizado"
-      redirect_to users_path
-    else
-      render :edit
-    end
+    user_update
   end
 
 
   def destroy
     @user = User.find(params[:id])
     @user.destroy if current_user.admin? && !(current_user == @user)
-    redirect_to users_path
   end
 
 private
