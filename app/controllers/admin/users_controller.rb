@@ -2,6 +2,7 @@ class Admin::UsersController < Admin::BaseController
 
   def index
     @users = User.all
+    @users = @users.paginate(:page => params[:page], :per_page => 20)
   end
 
   def new

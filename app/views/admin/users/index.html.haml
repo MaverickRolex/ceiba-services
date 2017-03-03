@@ -6,7 +6,13 @@
 
 .row
   .col-sm-12
+    %span#users-paginate.pagination.pagination-sm
+      = will_paginate @users, :previous_label => 'Anterior', :next_label => 'Siguiente', renderer: BootstrapPagination::Rails
+
     = render partial: "admin/users/users_table"
+
+    %span#users-paginate.pagination.pagination-sm
+      = will_paginate @users, :previous_label => 'Anterior', :next_label => 'Siguiente', renderer: BootstrapPagination::Rails
 
 #global-modal.modal.fade{:role => "dialog", :tabindex => "-1"}
   .modal-dialog{:role => "document"}
