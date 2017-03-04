@@ -1,13 +1,12 @@
 .row
   .col-sm-12
-    .clearfix
-      .pull-right
-        = link_to "Nuevo Usuario", new_user_path, class: "btn btn-primary", remote: :true
-
-.row
-  .col-sm-12
-    %span#users-paginate.pagination.pagination-sm
-      = will_paginate @users, :previous_label => 'Anterior', :next_label => 'Siguiente', renderer: BootstrapPagination::Rails
+    .row
+      .col-sm-6.new-btn-margin
+        %span.new-user-btn
+          = link_to "Nuevo Usuario", new_user_path, class: "btn btn-primary", remote: :true
+      .col-sm-6
+        %span#users-paginate.pagination.pagination-sm
+          = will_paginate @users, :previous_label => 'Anterior', :next_label => 'Siguiente', renderer: BootstrapPagination::Rails
 
     = render partial: "admin/users/users_table"
 

@@ -14,18 +14,25 @@
     .inline-block.padding-left
       = image_tag "logo.jpg", class: "logoimg logo-ico img-circle"
 
-  .col-md-7.header-height.vertical-center
+  .col-md-8.header-height.vertical-center
     .input-group.input-border
       %span.input-group-addon.basic-addon1.input-ico-style
         %i.fa.fa-search
       %input.form-control.input-style{:placeholder => "Search Service", :type => "text", :"aria-describedby" => "basic-addon1"}/
 
-  .col-md-3.header-height.vertical-center
+  .col-md-2.header-height.vertical-center
     .inline-block.block-right
-      %a.btn.btn-default{:href => "#"} Nuevo Servicio
-      = link_to "cerrar sesion", destroy_user_session_path, method: :delete, class: "btn btn-secondary" 
-    .inline-block.block-right
-      = image_tag "logo.jpg", class: "logoimg logo-ico img-circle"
+      .btn-group
+        .dropdown-toggle.overflow{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
+          = image_tag "logo.jpg", class: "logoimg logo-ico img-circle"
+        %ul.dropdown-menu.dropdown-menu-right
+          %li
+            = link_to "Perfil", "#"
+          %li
+            = link_to "Configuracion", "#"
+          %li.divider{:role => "separator"}
+          %li
+            = link_to "Cerrar Sesion", destroy_user_session_path, method: :delete
 
 .row
   .col-md-12#header-menu
