@@ -23,16 +23,16 @@
   .col-md-2.header-height.vertical-center
     .inline-block.block-right
       .btn-group
-        .dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
+        .dropdown-toggle.overflow{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
           = image_tag "logo.jpg", class: "logoimg logo-ico img-circle"
-        %ul.dropdown-menu.float-left
+        %ul.dropdown-menu.dropdown-menu-right
           %li
-            %a{:href => "#"} Perfil
+            = link_to "Perfil", "#"
           %li
-            %a{:href => "#"} Configuracion
+            = link_to "Configuracion", "#"
           %li.divider{:role => "separator"}
           %li
-            %a{:href => "destroy_user_session_path", method: :delete} Cerrar Sesion
+            = link_to "Cerrar Sesion", destroy_user_session_path, method: :delete
 
 .row
   .col-md-12#header-menu
