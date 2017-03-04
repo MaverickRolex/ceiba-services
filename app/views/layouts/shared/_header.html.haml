@@ -1,7 +1,8 @@
 .row#header-top
 
   #mySidenav.sidenav
-    %a.closebtn{:href => "javascript:void(0)", :onclick => "closeNav()"} x
+    .closebtn
+      %i.fa.fa-angle-double-left.menu-ico
     = link_to "Admin", users_path
     = link_to "About", "#"
     = link_to "Services", "#"
@@ -9,8 +10,8 @@
     = link_to "Contact", "#"
 
   .col-md-2.header-height.vertical-center
-    .inline-block.header-height
-      %i.fa.fa-bars.menu-ico#menu-open
+    .inline-block.header-height.menu-open
+      %i.fa.fa-bars.menu-ico
     .inline-block.padding-left
       = image_tag "logo.jpg", class: "logoimg logo-ico img-circle"
 
