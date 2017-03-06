@@ -1,15 +1,17 @@
 .row
-  .col-md-3.center-obj
-    %h2.padding-lef Log in
-    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-      .form-group
-        .col-md-8
+  .col-md-12.new-session-top
+
+.row
+  .col-md-12
+    .new-session
+      %h2 Iniciar Sesion
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .form-group
           .field
             = f.label :email
             %br/
             = f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Email'
-      .form-group
-        .col-md-8
+        .form-group
           .field
             = f.label :password
             %br/
@@ -19,6 +21,6 @@
               = f.check_box :remember_me
               = f.label :remember_me
           .actions
-            = f.submit "Log in", class: "btn btn-primary pull-right"
+            = f.submit "Iniciar", class: "btn btn-primary pull-right"
             .clearfix
             = render "devise/shared/links"
