@@ -87,7 +87,7 @@ $header-height: 64px;
     top: 0;
     left: 0;
     background-color: #eee;
-    overflow-x: hidden; 
+    overflow-x: hidden;
     padding-top: 60px;
     transition: 0.5s;
 }
@@ -123,11 +123,7 @@ $header-height: 64px;
 }
 
 .tex-right {
-    text-align: right;
-}
-
-.padding-lef {
-    padding-left: 14px;
+  text-align: right;
 }
 
 .user-select {
@@ -148,15 +144,24 @@ $header-height: 64px;
   margin: 0px;
 }
 
-.new-btn-margin{
-  margin: 40px 0px;
-}
-
-.new-user-btn {
-  padding-left: 20px;
+.new-user-btn{
+  margin: 20px 0px;
+  padding-right: 20px;
 }
 
 #users-paginate {
   float: right;
   padding-right: 20px;
+}
+
+.new-session-top {
+  width: 100%;
+  height: 50px;
+  margin: 0px;
+  background-color: #D6D9E8;
+}
+
+.new-session {
+  width: 30%;
+  margin: auto;
 }

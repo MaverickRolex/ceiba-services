@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   scope :admin, module: "admin" do
     resources :users
     resources :clients
+    resources :services
   end
 
 end

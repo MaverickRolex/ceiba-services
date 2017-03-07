@@ -7,14 +7,19 @@
     = javascript_include_tag 'application'
   %body
     -#Header
-    = render "/layouts/shared/header"
+    - if (current_user)
+      = render "/layouts/shared/header"
 
-    -#Content
+    - if content_for?(:admin_header)
+      .row
+        .col-md-12
+          = yield :admin_header
+    - if content_for?(:admin_content)
+      .row
+        .col-md-12
+          = yield :admin_content
     .row
       .col-md-12
-        = yield :admin_header
-        = yield :admin_content
-
         = yield
 
     -#Footer

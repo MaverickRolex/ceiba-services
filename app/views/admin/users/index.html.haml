@@ -1,17 +1,13 @@
-.row
-  .col-sm-12
-    .row
-      .col-sm-6.new-btn-margin
-        %span.new-user-btn
-          = link_to "Nuevo Usuario", new_user_path, class: "btn btn-primary", remote: :true
-      .col-sm-6
-        %span#users-paginate.pagination.pagination-sm
-          = will_paginate @users, :previous_label => 'Anterior', :next_label => 'Siguiente', renderer: BootstrapPagination::Rails
+- content_for :admin_header do
+  .new-user-btn.pull-right
+    = link_to "Nuevo Usuario", new_user_path, class: "btn btn-primary", remote: :true
+  .clearfix
 
-    = render partial: "admin/users/users_table"
+- content_for :admin_content do
+  = render partial: "admin/users/users_table"
 
-    %span#users-paginate.pagination.pagination-sm
-      = will_paginate @users, :previous_label => 'Anterior', :next_label => 'Siguiente', renderer: BootstrapPagination::Rails
+  %span#users-paginate.pagination.pagination-sm
+    = will_paginate @users, :previous_label => 'Anterior', :next_label => 'Siguiente', renderer: BootstrapPagination::Rails
 
 #global-modal.modal.fade{:role => "dialog", :tabindex => "-1"}
   .modal-dialog{:role => "document"}
