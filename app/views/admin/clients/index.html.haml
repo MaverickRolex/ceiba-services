@@ -1,1 +1,19 @@
-algo!!!
+- content_for :admin_header do
+  .new-user-btn.pull-right
+    = link_to "Nuevo Cliente", new_client_path, class: "btn btn-primary", remote: :true
+  .clearfix
+
+- content_for :admin_content do
+  = render partial: "admin/clients/clients_table"
+
+  %span#tables-paginate.pagination.pagination-sm
+    = will_paginate @clients, :previous_label => 'Anterior', :next_label => 'Siguiente', renderer: BootstrapPagination::Rails
+
+#global-modal.modal.fade{:role => "dialog", :tabindex => "-1"}
+  .modal-dialog{:role => "document"}
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"}
+        %h4.modal-title Nuevo Cliente  
+      .modal-body

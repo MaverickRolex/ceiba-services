@@ -1,0 +1,7 @@
+<% if @client.new_record? %>
+  $("#global-modal .modal-body").html("<%= j render partial: 'form_new' %>");
+  $("#global-modal").modal("show");
+<% else %>
+  $("#users-table tbody").prepend("<%= j render @client %>");
+  $("#global-modal").modal("hide");
+<% end %>

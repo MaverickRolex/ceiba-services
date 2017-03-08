@@ -6,7 +6,7 @@
 - content_for :admin_content do
   = render partial: "admin/users/users_table"
 
-  %span#users-paginate.pagination.pagination-sm
+  %span#tables-paginate.pagination.pagination-sm
     = will_paginate @users, :previous_label => 'Anterior', :next_label => 'Siguiente', renderer: BootstrapPagination::Rails
 
 #global-modal.modal.fade{:role => "dialog", :tabindex => "-1"}
