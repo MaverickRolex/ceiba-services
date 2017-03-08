@@ -4,6 +4,25 @@
       .pull-right
         = link_to "Nuevo Usuario", new_user_path, class: "btn btn-primary", remote: :true
 
+= search_form_for @q, url: users_path do |f|
+  %ul#form-new-user
+    .form-group
+      .col-md-4
+        .field
+          = f.label :first_name_cont, "Nombre"
+          = f.text_field :first_name_cont, class: 'form-control'
+          = f.label :last_name_cont, "Apellido"
+          = f.text_field :last_name_cont, class: 'form-control'
+          = f.label :email_cont, "Correo"
+          = f.text_field :email_cont, class: 'form-control'
+          = f.label :admin_true, "Admin"
+          = f.check_box :admin_true
+          = f.label :id_cont, "Id"
+          = f.text_field :id_cont, class: 'form-control'
+        .actions
+          %br
+          =f.submit "Search", class: "btn btn-primary"
+
 .row
   .col-sm-12
     = render partial: "admin/users/users_table"
