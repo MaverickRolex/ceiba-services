@@ -3,31 +3,31 @@
     .alert.alert-danger{:role => "alert"}
       - @user.errors.full_messages.each do |msg|
         %ul= msg
-  %ul#form-new-user
+  %ul#form-new-record
     .form-group
       .col-md-12
-        = f.label :first_name
-        = f.text_field :first_name, class: 'form-control', placeholder: 'First Name'
+        = f.label :Nombre
+        = f.text_field :first_name, class: 'form-control', placeholder: 'Nombre'
         %br/
     .form-group
       .col-md-12
-        = f.label :last_name
-        = f.text_field :last_name, class: 'form-control', placeholder: 'Last Name'
+        = f.label :Apellido
+        = f.text_field :last_name, class: 'form-control', placeholder: 'Apellido'
         %br/
     .form-group
       .col-md-12
-        = f.label :password
-        = f.password_field :password, class: 'form-control', placeholder: 'Password'
+        = f.label :Contraseña
+        = f.password_field :password, class: 'form-control', placeholder: 'Contraseña'
         %br/
     .form-group
       .col-md-12
-        = f.label :password_confirmation
-        = f.password_field :password_confirmation, class: 'form-control', placeholder: 'Password Confirmation'
+        = f.label :"Confirmar Contraseña"
+        = f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirmar Contraseña'
         %br/
     .form-group
       .col-md-12
-        = f.label :email
-        = f.text_field :email, class: 'form-control', placeholder: 'Email'
+        = f.label :"Correo electronico"
+        = f.text_field :email, class: 'form-control', placeholder: 'Correo electronico'
         %br/
     .form-group
       .col-md-12

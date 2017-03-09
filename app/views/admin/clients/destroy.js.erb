@@ -1,0 +1,3 @@
+<% if @client.destroyed? %>
+  $("tr[data-client-id='<%= @client.id %>']").remove();
+<% end %>

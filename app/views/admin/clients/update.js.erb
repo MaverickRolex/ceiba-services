@@ -1,0 +1,7 @@
+<% if @client.errors.empty? %>
+  $("tr[data-client-id='<%= @client.id %>']").replaceWith("<%= j render @client %>");
+  $("#global-modal").modal("hide");
+<% else %>
+  $("#global-modal .modal-body").html("<%= j render partial: 'form_edit' %>");
+  $("#global-modal").modal("show");
+<% end %>

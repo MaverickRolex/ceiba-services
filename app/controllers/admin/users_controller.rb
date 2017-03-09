@@ -2,7 +2,7 @@ class Admin::UsersController < Admin::BaseController
 
   def index
     @q = User.ransack(params[:q])
-    @users = @q.result(distinct: true)
+    @users = @q.result(distinct: true).paginate(:page => params[:page], :per_page => 20)
   end
 
   def new
