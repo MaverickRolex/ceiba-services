@@ -1,0 +1,21 @@
+= form_for @service, remote: :true do |f|
+  - unless @service.errors.empty?
+    .alert.alert-danger{:role => "alert"}
+      - @service.errors.full_messages.each do |msg|
+        %ul= msg
+  %ul#form-new-user
+    .form-group
+      .col-md-12
+        = f.label :Titúlo
+        = f.text_field :title, class: 'form-control', placeholder: 'Titúlo'
+        %br/
+    .form-group
+      .col-md-12
+        = f.label :Descripción
+        = f.text_field :description, class: 'form-control', placeholder: 'Descripción'
+        %br/
+        %br/
+    .form-group
+      .col-md-12
+        = f.submit "Guardar", class: "btn btn-primary"
+        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Cancelar

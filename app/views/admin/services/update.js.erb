@@ -1,0 +1,7 @@
+<% if @service.errors.empty? %>
+  $("tr[data-service-id='<%= @service.id %>']").replaceWith("<%= j render @service %>");
+  $("#global-modal").modal("hide");
+<% else %>
+  $("#global-modal .modal-body").html("<%= j render partial: 'form_edit' %>");
+  $("#global-modal").modal("show");
+<% end %>
