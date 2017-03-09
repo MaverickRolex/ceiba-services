@@ -1,7 +1,32 @@
 - content_for :admin_header do
-  .new-user-btn.pull-right
-    = link_to "Nuevo Usuario", new_user_path, class: "btn btn-primary", remote: :true
-  .clearfix
+  = search_form_for @q, url: users_path do |f|
+    %ul#form-new-user
+      .form-group
+        .col-md-6
+          .field
+            = f.label :first_name_cont, "Nombre"
+            = f.text_field :first_name_cont, class: 'form-control'
+            = f.label :last_name_cont, "Apellido"
+            = f.text_field :last_name_cont, class: 'form-control'
+            = f.label :email_cont, "Correo"
+            = f.text_field :email_cont, class: 'form-control'
+      .form-group
+        .col-md-6
+          .field
+            = f.label :id_cont, "Id"
+            = f.text_field :id_cont, class: 'form-control'
+            = f.label :admin_true, "Admin"
+            = f.check_box :admin_true
+      .form-group
+        .col-md-6
+          .field.padding-top-10
+            =f.submit "Search", class: "btn btn-primary pull-right"
+            .clearfix
+  .row
+    .col-md-12
+      .new-user-btn.pull-right
+        = link_to "Nuevo Usuario", new_user_path, class: "btn btn-primary", remote: :true
+        .clearfix
 
 - content_for :admin_content do
   = render partial: "admin/users/users_table"
