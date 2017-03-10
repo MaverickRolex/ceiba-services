@@ -1,8 +1,8 @@
 class Admin::ClientsController < ApplicationController
 
   def index
-    @clients = Client.all
-    @clients = @clients.paginate(:page => params[:page], :per_page => 20)
+    @q = Client.ransack(params[:q])
+    @clients = @q.result(distinct: true).paginate(:page => params[:page], :per_page => 20)
   end
 
   def new

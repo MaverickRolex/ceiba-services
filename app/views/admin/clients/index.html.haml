@@ -1,7 +1,24 @@
 - content_for :admin_header do
-  .new-user-btn.pull-right
-    = link_to "Nuevo Cliente", new_client_path, class: "btn btn-primary", remote: :true
-  .clearfix
+  = search_form_for @q, url: clients_path do |f|
+    .row
+      %ul#form-new-record
+        .form-group
+          .col-md-6.search-form-left
+            .field
+              = f.label :id_cont, "Id", class: 'margin-top-10'
+              = f.text_field :id_cont, class: 'form-control'
+              = f.label :name_cont, "Nombre", class: 'margin-top-10'
+              = f.text_field :name_cont, class: 'form-control'
+              = f.label :description_cont, "Descripcion", class: 'margin-top-10'
+              = f.text_field :description_cont, class: 'form-control'
+            .field.padding-top-10
+              =f.submit "Search", class: "btn btn-primary pull-right"
+          .col-md-6
+  .row
+    .col-md-12
+      .btn-new-element.pull-right
+        = link_to "Nuevo Cliente", new_client_path, class: "btn btn-primary", remote: :true
+      .clearfix
 
 - content_for :admin_content do
   = render partial: "admin/clients/clients_table"
