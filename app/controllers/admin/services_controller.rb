@@ -1,7 +1,8 @@
 class Admin::ServicesController < ApplicationController
+
   def index
-    @services = Service.all
-    @services = @services.paginate(:page => params[:page], :per_page => 20)
+    @q = Service.ransack(params[:q])
+    @services = @q.result(distinct: true).paginate(:page => params[:page], :per_page => 20)
   end
 
   def new
