@@ -1,30 +1,36 @@
 - content_for :admin_header do
-  = search_form_for @q, url: users_path do |f|
-    .row
-      %ul#form-new-record
-        .form-group
-          .col-md-6.search-form-left
-            .field
-              = f.label :first_name_cont, "Nombre", class: 'margin-top-10'
-              = f.text_field :first_name_cont, class: 'form-control'
-              = f.label :last_name_cont, "Apellido", class: 'margin-top-10'
-              = f.text_field :last_name_cont, class: 'form-control'
-              .margin-top-10
-                = f.label :admin_true, "Admin"
-                = f.check_box :admin_true, class: 'no-margin padding-top-10'
-          .col-md-6.search-form-right
-            .field
-              = f.label :id_cont, "Id", class: 'margin-top-10'
-              = f.text_field :id_cont, class: 'form-control'
-              = f.label :email_cont, "Correo", class: 'margin-top-10'
-              = f.text_field :email_cont, class: 'form-control'
-              =f.submit "Search", class: "btn btn-primary pull-right margin-top-10"
-              .clearfix
+  #search-form.collapse
+    = search_form_for @q, url: users_path do |f|
+      .row
+        %ul#form-new-record
+          .form-group
+            .col-md-6.search-form-left
+              .field
+                = f.label :first_name_cont, "Nombre", class: 'margin-top-10'
+                = f.text_field :first_name_cont, class: 'form-control'
+                = f.label :last_name_cont, "Apellido", class: 'margin-top-10'
+                = f.text_field :last_name_cont, class: 'form-control'
+                .margin-top-10
+                  = f.label :admin_true, "Admin"
+                  = f.check_box :admin_true, class: 'no-margin padding-top-10'
+            .col-md-6.search-form-right
+              .field
+                = f.label :id_cont, "Id", class: 'margin-top-10'
+                = f.text_field :id_cont, class: 'form-control'
+                = f.label :email_cont, "Correo", class: 'margin-top-10'
+                = f.text_field :email_cont, class: 'form-control'
+                =f.submit "Search", class: "btn btn-primary pull-right margin-top-10"
+                .clearfix
+
   .row
     .col-md-12
-      .btn-new-element.pull-right
-        = link_to "Nuevo Usuario", new_user_path, class: "btn btn-primary", remote: :true
-        .clearfix
+      .pull-right
+        .btn-new-element
+          = link_to "Nuevo Usuario", new_user_path, class: "btn btn-primary", remote: :true
+      .pull-right
+        .btn-new-element
+          = link_to " Busqueda Avanzada", "#search-form", "data-target" => "#search-form", "data-toggle" => "collapse", class: "btn btn-default"
+      .clearfix
 
 - content_for :admin_content do
   = render partial: "admin/users/users_table"
