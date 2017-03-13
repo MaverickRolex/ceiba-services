@@ -1,10 +1,30 @@
 - content_for :admin_header do
-  .new-user-btn.pull-right
-    = link_to "Nuevo Servicio", new_service_path, class: "btn btn-primary", remote: :true
-  .clearfix
+  = search_form_for @q, url: services_path do |f|
+    .row
+      %ul#form-new-record
+        .form-group
+          .col-md-6.search-form-left
+            .field
+              = f.label :id_cont, "Id", class: 'margin-top-10'
+              = f.text_field :id_cont, class: 'form-control'
+              = f.label :title_cont, "Titulo", class: 'margin-top-10'
+              = f.text_field :title_cont, class: 'form-control'
+              = f.label :description_cont, "Descripcion", class: 'margin-top-10'
+              = f.text_field :description_cont, class: 'form-control'
+            .field.padding-top-10
+              =f.submit "Search", class: "btn btn-primary pull-right"
+          .col-md-6
 
-- content_for :admin_content do
-  = render partial: "admin/services/services_table"
+  .row
+    .col-md-12
+      .btn-new-element.pull-right
+        = link_to "Nuevo Servicio", new_service_path, class: "btn btn-primary", remote: :true
+      .clearfix
+
+.row
+  .col-md-12
+    - content_for :admin_content do
+      = render partial: "admin/services/services_table"
 
   %span#services-paginate.pagination.pagination-sm
     = will_paginate @services, :previous_label => 'Anterior', :next_label => 'Siguiente', renderer: BootstrapPagination::Rails

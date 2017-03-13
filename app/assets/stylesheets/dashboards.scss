@@ -121,6 +121,10 @@ $header-height: 64px;
   padding-top: 10px;
 }
 
+.margin-top-10 {
+  margin-top: 10px;
+}
+
 .center-obj {
   margin: auto;
   float: none;
@@ -148,9 +152,18 @@ $header-height: 64px;
   margin: 0px;
 }
 
-.new-user-btn{
-  margin: 20px 0px;
+.btn-new-element{
+  margin: 15px 20px 15px 0px;
+}
+
+.search-form-left{
+  margin-top: 15px;
   padding-right: 20px;
+}
+
+.search-form-right{
+  margin-top: 15px;
+  padding-left: 20px;
 }
 
 #tables-paginate {
