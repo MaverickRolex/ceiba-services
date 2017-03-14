@@ -1,0 +1,7 @@
+<% if @service_group.new_record? %>
+  $("#global-modal .modal-body").html("<%= j render partial: 'form_new' %>");
+  $("#global-modal").modal("show");
+<% else %>
+  $("#service-groups-table tbody").prepend("<%= j render @service_group %>");
+  $("#global-modal").modal("hide");
+<% end %>
