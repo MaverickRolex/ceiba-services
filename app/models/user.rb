@@ -7,6 +7,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :lockable,
          :recoverable, :rememberable, :trackable, :validatable
+  belongs_to :owner, class_name: "Company", foreign_key: :owner_id
 
   def full_name
     first_name + " " + last_name

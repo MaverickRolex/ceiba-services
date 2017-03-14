@@ -178,7 +178,16 @@ $header-height: 64px;
   background-color: #D6D9E8;
 }
 
-.new-session {
+#new-session {
   width: 30%;
   margin: auto;
+}
+
+#import-users-new {
+  width: 50%;
+  margin: auto;
+  margin-top: 10px;
+  padding: 0px 5px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
 }

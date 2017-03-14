@@ -29,7 +29,10 @@
           = link_to "Nuevo Usuario", new_user_path, class: "btn btn-primary", remote: :true
       .pull-right
         .btn-new-element
-          = link_to " Busqueda Avanzada", "#search-form", "data-target" => "#search-form", "data-toggle" => "collapse", class: "btn btn-default"
+          = link_to "Importar Usuarios", import_users_new_path, class: "btn btn-default", remote: :true
+      .pull-right
+        .btn-new-element
+          = link_to "Busqueda Avanzada", "#search-form", "data-target" => "#search-form", "data-toggle" => "collapse", class: "btn btn-default"
       .clearfix
 
 - content_for :admin_content do
