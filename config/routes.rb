@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :users
     resources :clients
     resources :services
+    resources :service_groups
   end
 
 end

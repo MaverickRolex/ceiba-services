@@ -1,0 +1,3 @@
+<% if @service_group.destroyed? %>
+  $("tr[data-service-group-id='<%= @service_group.id %>']").remove();
+<% end %>
