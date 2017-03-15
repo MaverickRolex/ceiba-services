@@ -6,8 +6,8 @@
           .form-group
             .col-md-6.search-form-left
               .field
-                = f.label :id_cont, "Id", class: 'margin-top-10'
-                = f.text_field :id_cont, class: 'form-control'
+                = f.label :id_eq, "Id", class: 'margin-top-10'
+                = f.text_field :id_eq, class: 'form-control'
                 = f.label :name_cont, "Nombre", class: 'margin-top-10'
                 = f.text_field :name_cont, class: 'form-control'
                 = f.label :description_cont, "Descripcion", class: 'margin-top-10'
@@ -23,7 +23,7 @@
       .pull-right
         .search-link
           = link_to "#search-form", "data-target" => "#search-form", "data-toggle" => "collapse" do
-            Buqueda Avanzada
+            Búsqueda Avanzada
             %i.fa.fa-search
       .clearfix
 
