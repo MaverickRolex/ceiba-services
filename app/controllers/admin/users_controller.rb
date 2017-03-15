@@ -23,10 +23,18 @@ class Admin::UsersController < Admin::BaseController
     user_update
   end
 
-
   def destroy
     @user = User.find(params[:id])
     @user.destroy if current_user.admin? && !(current_user == @user)
+  end
+
+  def import_users_new
+  end
+
+  def import_users_create
+  end
+
+  def import_users_poller
   end
 
 private

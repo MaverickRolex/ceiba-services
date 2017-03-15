@@ -1,0 +1,6 @@
+.row
+  .col-md-12
+    #import-users-new
+      .btn-new-element
+        = form_for :import_file do |f|
+          = f.file_field :import_users

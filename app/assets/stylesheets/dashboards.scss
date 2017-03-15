@@ -166,6 +166,10 @@ $header-height: 64px;
   padding-left: 20px;
 }
 
+.search-link{
+  margin: 22px 20px 15px 0px;
+}
+
 #tables-paginate {
   float: right;
   padding-right: 20px;
@@ -178,11 +182,16 @@ $header-height: 64px;
   background-color: #D6D9E8;
 }
 
-.new-session {
+#new-session {
   width: 30%;
   margin: auto;
 }
 
-.search-link{
-  margin: 22px 20px 15px 0px;
+#import-users-new {
+  width: 50%;
+  margin: auto;
+  margin-top: 10px;
+  padding: 0px 5px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
 }

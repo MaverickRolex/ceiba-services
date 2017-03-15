@@ -11,6 +11,10 @@ Rails.application.routes.draw do
     resources :clients
     resources :services
     resources :service_groups
+    resources :companies
+    get 'import_users/new', to: 'users#import_users_new', as: 'import_users_new'
+    post 'import_users', to: 'users#import_users_create', as: 'import_users'
+    get 'import_users_poller', to: 'users#import_users_poller', as: 'import_users_poller'
   end
 
 end
