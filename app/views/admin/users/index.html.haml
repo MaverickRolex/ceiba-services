@@ -15,8 +15,8 @@
                   = f.check_box :admin_true, class: 'no-margin padding-top-10'
             .col-md-6.search-form-right
               .field
-                = f.label :id_cont, "Id", class: 'margin-top-10'
-                = f.text_field :id_cont, class: 'form-control'
+                = f.label :id_eq, "Id", class: 'margin-top-10'
+                = f.text_field :id_eq, class: 'form-control'
                 = f.label :email_cont, "Correo", class: 'margin-top-10'
                 = f.text_field :email_cont, class: 'form-control'
                 =f.submit "Search", class: "btn btn-primary pull-right margin-top-10"
@@ -33,7 +33,7 @@
       .pull-right
         .search-link
           = link_to "#search-form", "data-target" => "#search-form", "data-toggle" => "collapse" do
-            Buqueda Avanzada
+            Búsqueda Avanzada
             %i.fa.fa-search
       .clearfix
 
