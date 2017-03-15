@@ -1,0 +1,7 @@
+<% if @service_group.errors.empty? %>
+  $("tr[data-service-group-id='<%= @service_group.id %>']").replaceWith("<%= j render @service_group %>");
+  $("#global-modal").modal("hide");
+<% else %>
+  $("#global-modal .modal-body").html("<%= j render partial: 'form_edit' %>");
+  $("#global-modal").modal("show");
+<% end %>

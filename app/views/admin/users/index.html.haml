@@ -31,8 +31,10 @@
         .btn-new-element
           = link_to "Importar Usuarios", import_users_new_path, class: "btn btn-default", remote: :true
       .pull-right
-        .btn-new-element
-          = link_to "Busqueda Avanzada", "#search-form", "data-target" => "#search-form", "data-toggle" => "collapse", class: "btn btn-default"
+        .search-link
+          = link_to "#search-form", "data-target" => "#search-form", "data-toggle" => "collapse" do
+            Buqueda Avanzada
+            %i.fa.fa-search
       .clearfix
 
 - content_for :admin_content do

@@ -1,6 +1,6 @@
 - content_for :admin_header do
   #search-form.collapse
-    = search_form_for @q, url: clients_path do |f|
+    = search_form_for @q, url: service_groups_path do |f|
       .row
         %ul#form-new-record
           .form-group
@@ -15,23 +15,24 @@
               .field.padding-top-10
                 =f.submit "Search", class: "btn btn-primary pull-right"
             .col-md-6
+
   .row
     .col-md-12
       .pull-right
-        .btn-new-element
-          = link_to "Nuevo Cliente", new_client_path, class: "btn btn-primary", remote: :true
+        .btn-new-element.pull-right
+          = link_to "Nuevo Servicio", new_service_group_path, class: "btn btn-primary", remote: :true
       .pull-right
-        .search-link
-          = link_to "#search-form", "data-target" => "#search-form", "data-toggle" => "collapse" do
-            Buqueda Avanzada
-            %i.fa.fa-search
+        .btn-new-element
+          = link_to " Busqueda Avanzada", "#search-form", "data-target" => "#search-form", "data-toggle" => "collapse", class: "btn btn-default"
       .clearfix
 
-- content_for :admin_content do
-  = render partial: "admin/clients/clients_table"
+.row
+  .col-md-12
+    - content_for :admin_content do
+      = render partial: "admin/service_groups/service_groups_table"
 
-  %span#tables-paginate.pagination.pagination-sm
-    = will_paginate @clients, :previous_label => 'Anterior', :next_label => 'Siguiente', renderer: BootstrapPagination::Rails
+  %span#services-paginate.pagination.pagination-sm
+    = will_paginate @service_groups, :previous_label => 'Anterior', :next_label => 'Siguiente', renderer: BootstrapPagination::Rails
 
 #global-modal.modal.fade{:role => "dialog", :tabindex => "-1"}
   .modal-dialog{:role => "document"}
@@ -39,5 +40,5 @@
       .modal-header
         %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
           %span{"aria-hidden" => "true"}
-        %h4.modal-title Nuevo Cliente  
+        %h4.modal-title Grupo de Servicio
       .modal-body
