@@ -1,0 +1,7 @@
+<% if @company.errors.empty? %>
+  $("tr[data-company-id='<%= @company.id %>']").replaceWith("<%= j render @company %>");
+  $("#global-modal").modal("hide");
+<% else %>
+  $("#global-modal .modal-body").html("<%= j render partial: 'form_edit' %>");
+  $("#global-modal").modal("show");
+<% end %>

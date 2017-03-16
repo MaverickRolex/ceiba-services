@@ -1,0 +1,25 @@
+= form_for @company, remote: :true do |f|
+  - unless @company.errors.empty?
+    .alert.alert-danger{:role => "alert"}
+      - @company.errors.full_messages.each do |msg|
+        %ul= msg
+  %ul#form-new-record
+    .form-group
+      .col-md-12
+        = f.label :Name
+        = f.text_field :name, class: 'form-control', placeholder: 'Name'
+        %br/
+    .form-group
+      .col-md-12
+        = f.label :Rfc
+        = f.text_field :rfc, class: 'form-control', placeholder: 'Rfc'
+        %br/
+    .form-group
+      .col-md-12
+        = f.label :Description
+        = f.text_field :description, class: 'form-control', placeholder: 'Description'
+        %br/
+    .form-group
+      .col-md-12
+        = f.submit "Save", class: "btn btn-primary"
+        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Cancel
