@@ -8,9 +8,9 @@
               .field
                 = f.label :id_eq, "Id", class: 'margin-top-10'
                 = f.text_field :id_eq, class: 'form-control'
-                = f.label :name_cont, "Nombre", class: 'margin-top-10'
+                = f.label :name_cont, "Name", class: 'margin-top-10'
                 = f.text_field :name_cont, class: 'form-control'
-                = f.label :description_cont, "Descripcion", class: 'margin-top-10'
+                = f.label :description_cont, "Description", class: 'margin-top-10'
                 = f.text_field :description_cont, class: 'form-control'
               .field.padding-top-10
                 =f.submit "Search", class: "btn btn-primary pull-right"
@@ -20,11 +20,11 @@
     .col-md-12
       .pull-right
         .btn-new-element
-          = link_to "Nuevo Grupo de Servicio", new_service_group_path, class: "btn btn-primary", remote: :true
+          = link_to "New Service Group", new_service_group_path, class: "btn btn-primary", remote: :true
       .pull-right
         .search-link
           = link_to "#search-form", "data-target" => "#search-form", "data-toggle" => "collapse" do
-            Búsqueda Avanzada
+            Advanced Search
             %i.fa.fa-search
       .clearfix
 
@@ -42,5 +42,5 @@
       .modal-header
         %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
           %span{"aria-hidden" => "true"}
-        %h4.modal-title Grupo de Servicio
+        %h4.modal-title Service Group
       .modal-body
