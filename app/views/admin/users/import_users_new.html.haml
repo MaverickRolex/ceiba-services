@@ -1,6 +1,14 @@
 .row
   .col-md-12
     #import-users-new
-      .btn-new-element
-        = form_for :import_file do |f|
-          = f.file_field :import_users
+      #fileupload.import-form
+        = form_for :import_file, url: import_users_path do |f|
+          = f.file_field :import_users, id: 'fileupload'
+      #progress
+        .bar
+          .bar-success
+
+/.btn.btn-success
+/      .upload-btn.btn.btn-primary
+/        Upload
+/      .clearfix

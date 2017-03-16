@@ -10,3 +10,8 @@ $ ->
   $('.closebtn').click ->
     document.getElementById('mySidenav').style.width = '0'
     return
+
+  $('#fileupload').fileupload progressall: (e, data) ->
+    progress = parseInt(data.loaded / data.total * 100, 10)
+    $('#progress .bar-success').css 'width', progress + '%'
+    return
