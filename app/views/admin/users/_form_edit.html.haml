@@ -6,28 +6,28 @@
   %ul#form-new-record
     .form-group
       .col-md-12
-        = f.label :Nombre
-        = f.text_field :first_name, class: 'form-control', placeholder: 'Nombre'
+        = f.label :Name
+        = f.text_field :first_name, class: 'form-control', placeholder: 'Name'
         %br/
     .form-group
       .col-md-12
-        = f.label :Apellido
-        = f.text_field :last_name, class: 'form-control', placeholder: 'Apellido'
+        = f.label :Last_Name
+        = f.text_field :last_name, class: 'form-control', placeholder: 'Last Name'
         %br/
     .form-group
       .col-md-12
-        = f.label :Contraseña
-        = f.password_field :password, class: 'form-control', placeholder: 'Contraseña'
+        = f.label :Password
+        = f.password_field :password, class: 'form-control', placeholder: 'Password'
         %br/
     .form-group
       .col-md-12
-        = f.label :"Confirmar Contraseña"
-        = f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirmar Contraseña'
+        = f.label :"Password_Confirmation"
+        = f.password_field :password_confirmation, class: 'form-control', placeholder: 'Password Confirmation'
         %br/
     .form-group
       .col-md-12
-        = f.label :"Correo electronico"
-        = f.text_field :email, class: 'form-control', placeholder: 'Correo electronico'
+        = f.label :"Email"
+        = f.text_field :email, class: 'form-control', placeholder: 'Email'
         %br/
     .form-group
       .col-md-12
@@ -37,5 +37,5 @@
         %br/
     .form-group
       .col-md-12
-        = f.submit "Guardar", class: "btn btn-primary"
-        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Cancelar
+        = f.submit "Save", class: "btn btn-primary"
+        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Cancel
