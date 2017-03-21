@@ -1,0 +1,3 @@
+<% if @inventory.destroyed? %>
+  $("tr[data-inventory-id='<%= @inventory.id %>']").remove();
+<% end %>

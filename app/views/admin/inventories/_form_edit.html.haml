@@ -1,0 +1,20 @@
+= form_for @inventory, remote: :true do |f|
+  - unless @inventory.errors.empty?
+    .alert.alert-danger{:role => "alert"}
+      - @inventory.errors.full_messages.each do |msg|
+        %ul= msg
+  %ul#form-new-record
+    .form-group
+      .col-md-12
+        = f.label :Company_ID
+        = f.text_field :company_id, class: 'form-control', placeholder: 'Company_ID'
+        %br/
+    .form-group
+      .col-md-12
+        = f.label :Quantity
+        = f.text_field :quantity, class: 'form-control', placeholder: 'Quantity'
+        %br/
+    .form-group
+      .col-md-12
+        = f.submit "Save", class: "btn btn-primary"
+        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Cancel
