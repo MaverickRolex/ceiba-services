@@ -7,6 +7,7 @@ class Admin::UsersController < Admin::BaseController
 
   def new
     @user = User.new
+    @user.build_owned_company
   end
 
   def create
@@ -40,7 +41,7 @@ class Admin::UsersController < Admin::BaseController
 private
 
   def user_params
-     params.require(:user).permit(:first_name, :password, :password_confirmation, :last_name, :email, :admin)
+     params.require(:user).permit(:first_name, :password, :password_confirmation, :last_name, :email, :admin, owned_company_attributes: [:name, :rfc, :description])
   end
 
   def user_update
