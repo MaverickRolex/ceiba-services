@@ -7,10 +7,12 @@ class Admin::CompaniesController < ApplicationController
 
   def new
     @company = Company.new
+    @company.build_primary_user
   end
 
   def create
     @company = Company.new(companies_params)
+    binding.pry
     @company.save
   end
 
@@ -31,7 +33,7 @@ class Admin::CompaniesController < ApplicationController
   private
 
   def companies_params
-     params.require(:company).permit(:name, :rfc, :description)
+     params.require(:company).permit(:name, :rfc, :description, primary_user_attributes: [:first_name, :last_name, :password, :password_confirmation, :email, :admin])
   end
 
 end

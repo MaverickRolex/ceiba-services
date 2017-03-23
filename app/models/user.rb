@@ -10,10 +10,10 @@ class User < ApplicationRecord
   belongs_to :owner, class_name: "Company", foreign_key: :owner_id
   has_one :owned_company, foreign_key: :primary_user_id, class_name: "Company"
 
+  accepts_nested_attributes_for :owned_company
+
   def full_name
     first_name + " " + last_name
   end
-
-  accepts_nested_attributes_for :owned_company
 
 end

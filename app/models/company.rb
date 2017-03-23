@@ -2,7 +2,7 @@
 
   has_many :owned_users, class_name: "User", foreign_key: :owner_id
   validates :name, :description, presence: true
-  has_one :primary_user
-  belongs_to :prymary_user, foreign_key: :primary_user_id, class_name: "User"
+  belongs_to :primary_user, foreign_key: :primary_user_id, class_name: "User"
 
+  accepts_nested_attributes_for :primary_user
 end
