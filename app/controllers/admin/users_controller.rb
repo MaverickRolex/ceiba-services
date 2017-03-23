@@ -32,15 +32,18 @@ class Admin::UsersController < Admin::BaseController
   end
 
   def import_users_create
+    @user_import = UserImport.new(file: import_user_params[:import_users], status: UserImport::INCOMPLETE)
+    @user_import.save
   end
 
   def import_users_poller
+    @user_import = UserImport.find(params[:id])
   end
 
-private
+  private
 
   def user_params
-     params.require(:user).permit(:first_name, :password, :password_confirmation, :last_name, :email, :admin)
+     params.require(:user).permit(:first_name, :last_name, :password, :password_confirmation, :email, :admin)
   end
 
   def user_update
@@ -49,6 +52,10 @@ private
     else
       @user.update_attributes(user_params)
     end
+  end
+
+  def import_user_params
+    params.require(:import_file).permit(:import_users)
   end
 
 end
