@@ -5,6 +5,7 @@ class UserImportManager
     @user_import = UserImport.find(user_import_id)
   end
 
+  # Import data from the file to database
   def import
     spreadsheet = open_spreadsheet
     header = spreadsheet.row(1)
@@ -15,6 +16,7 @@ class UserImportManager
     end
   end
 
+  # Open import file and detect extension file
   def open_spreadsheet
     case File.extname(@user_import[:file])
       when ".csv" then ::Roo::Csv.new(@user_import.file.path, password: nil)

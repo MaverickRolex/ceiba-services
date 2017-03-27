@@ -42,8 +42,12 @@ gem "font-awesome-rails"
 gem "pry"
 gem "jquery-fileupload-rails"
 gem 'carrierwave', '~> 1.0'
-gem "roo", "~> 2.7.0"  #Roo implements read access for all common spreadsheet in Excelx, OpenOffice and CSV
-gem 'roo-xls'  #Add Roo file format Excel xls
+# Roo implements read access for all common spreadsheet in Excelx, OpenOffice and CSV
+gem "roo", "~> 2.7.0"
+# Add Roo file format Excel xls
+gem 'roo-xls'
+# Use sidekiq for background jobs
+gem 'sidekiq'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
