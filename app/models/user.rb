@@ -10,6 +10,8 @@ class User < ApplicationRecord
   belongs_to :owner, class_name: "Company", foreign_key: :owner_id
   has_one :owned_company, foreign_key: :primary_user_id, class_name: "Company"
 
+  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }, on: :create
+
   accepts_nested_attributes_for :owned_company
 
   def full_name

@@ -21,5 +21,27 @@
         %br/
     .form-group
       .col-md-12
+        %div.separating-company
+        = f.fields_for :primary_user do |users_fields|
+          = users_fields.label :first_name
+          = users_fields.text_field :first_name, class: 'form-control', placeholder: 'First Name'
+          %br/
+          = users_fields.label :last_name
+          = users_fields.text_field :last_name, class: 'form-control', placeholder: 'Last Name'
+          %br/
+          = users_fields.label :admin
+          = users_fields.check_box :admin, class: 'form-control', placeholder: 'Admin'
+          %br/
+          = users_fields.label :email
+          = users_fields.text_field :email, class: 'form-control', placeholder: 'Email'
+          %br/
+          = users_fields.label :password
+          = users_fields.password_field :password, class: 'form-control', placeholder: 'Password'
+          %br/
+          = users_fields.label :"password_Confirmation"
+          = users_fields.password_field :password_confirmation, class: 'form-control', placeholder: 'Password Confirmation'
+          %br/
+    .form-group
+      .col-md-12
         = f.submit "Save", class: "btn btn-primary"
         %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Cancel
