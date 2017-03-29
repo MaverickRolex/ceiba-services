@@ -39,6 +39,7 @@
       .col-md-12
         %div.separating-company
         = f.fields_for :owned_company do |companies_fields|
+
           = companies_fields.label :name
           = companies_fields.text_field :name, class: 'form-control', placeholder: 'Name'
           %br/

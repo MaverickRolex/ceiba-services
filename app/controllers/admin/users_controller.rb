@@ -41,7 +41,20 @@ class Admin::UsersController < Admin::BaseController
 private
 
   def user_params
-     params.require(:user).permit(:first_name, :password, :password_confirmation, :last_name, :email, :admin, owned_company_attributes: [:name, :rfc, :description])
+     params.
+      require(:user).permit(
+        :first_name,
+        :last_name,
+        :password,
+        :password_confirmation,
+        :email,
+        :admin,
+        owned_company_attributes:[
+          :name,
+          :rfc,
+          :description
+        ]
+      )
   end
 
   def user_update

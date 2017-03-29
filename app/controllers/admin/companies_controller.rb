@@ -56,8 +56,7 @@ class Admin::CompaniesController < ApplicationController
       @user.update_without_password(companies_params[:primary_user_attributes])
       @company.update(companies_params.except(:primary_user_attributes))
     else
-      @user.update_attributes(companies_params[:primary_user_attributes])
-      @company.update(companies_params.except(:primary_user_attributes))
+      @company.update(companies_params)
     end
   end
 

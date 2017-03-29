@@ -34,7 +34,20 @@
         = f.label :admin
         = f.check_box :admin
         %br/
-        %br/
+    .form-group
+      .col-md-12
+        %div.separating-company
+        = f.fields_for :owned_company do |companies_fields|
+          = companies_fields.label :name
+          = companies_fields.text_field :name, class: 'form-control', placeholder: 'Company Name'
+          %br/
+          = companies_fields.label :rfc
+          = companies_fields.text_field :rfc, class: 'form-control', placeholder: 'Rfc'
+          %br/
+          = companies_fields.label :description
+          = companies_fields.text_field :description, class: 'form-control', placeholder: 'Description'
+          %br/
+          %br/
     .form-group
       .col-md-12
         = f.submit "Save", class: "btn btn-primary"
