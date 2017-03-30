@@ -6,27 +6,27 @@
   %ul#form-new-record
     .form-group
       .col-md-12
-        = f.label :Name
+        = f.label :name
         = f.text_field :first_name, class: 'form-control', placeholder: 'Name'
         %br/
     .form-group
       .col-md-12
-        = f.label :Last_Name
+        = f.label :last_Name
         = f.text_field :last_name, class: 'form-control', placeholder: 'Last Name'
         %br/
     .form-group
       .col-md-12
-        = f.label :Password
+        = f.label :password
         = f.password_field :password, class: 'form-control', placeholder: 'Password'
         %br/
     .form-group
       .col-md-12
-        = f.label :"Password_Confirmation"
+        = f.label :"password_Confirmation"
         = f.password_field :password_confirmation, class: 'form-control', placeholder: 'Password Confirmation'
         %br/
     .form-group
       .col-md-12
-        = f.label :"Email"
+        = f.label :"email"
         = f.text_field :email, class: 'form-control', placeholder: 'Email'
         %br/
     .form-group
@@ -35,6 +35,21 @@
         = f.check_box :admin
         %br/
         %br/
+    .form-group
+      .col-md-12
+        %div.separating-company
+        = f.fields_for :owned_company do |companies_fields|
+
+          = companies_fields.label :name
+          = companies_fields.text_field :name, class: 'form-control', placeholder: 'Name'
+          %br/
+          = companies_fields.label :rfc
+          = companies_fields.text_field :rfc, class: 'form-control', placeholder: 'Rfc'
+          %br/
+          = companies_fields.label :description
+          = companies_fields.text_field :description, class: 'form-control', placeholder: 'Description'
+          %br/
+
     .form-group
       .col-md-12
         = f.submit "Save", class: "btn btn-primary"
