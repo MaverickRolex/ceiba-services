@@ -32,8 +32,12 @@ class Admin::UsersController < Admin::BaseController
   end
 
   def import_users_create
-    @user_import = UserImport.new(file: import_user_params[:import_users], status: UserImport::INCOMPLETE)
+    @user_import = UserImport.new(
+      file: import_user_params[:import_users],
+      status: UserImport.statuses["incomplete"]
+    )
     @user_import.save
+    BackgroundImporter.perform_async(@user_import.id)
   end
 
   def import_users_poller

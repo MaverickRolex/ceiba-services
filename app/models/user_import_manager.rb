@@ -12,8 +12,9 @@ class UserImportManager
     (2..spreadsheet.last_row).each do |i|
       row = Hash[[header, spreadsheet.row(i)].transpose]
       @user = User.new(row)
-      @user.save
+      @user.save!
     end
+    @user_import.update_attributes(status: UserImport.statuses["complete"])
   end
 
   # Open import file and detect extension file

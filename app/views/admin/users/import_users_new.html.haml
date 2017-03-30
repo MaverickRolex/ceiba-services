@@ -1,11 +1,11 @@
 .row
   .col-md-12
-    #import-users-new
-      #import-success.alert.alert-success.no-margin.messages
-        %span User import successful
-      #import-errors.alert.alert-danger.no-margin.messages
+    #upload-users-new
+      #upload-success.alert.alert-success.no-margin.messages
+        %span File upload success
+      #upload-errors.alert.alert-danger.no-margin.messages
 
-      = link_to "Select File", "#", id: 'upload-launch', class: "btn btn-success import-form"
+      = link_to "Select File", "#", id: 'upload-launch', class: "btn btn-primary import-form"
       %span#file-name No file selected...
 
       .import-form.hidden
@@ -16,8 +16,19 @@
       #progress
         .bar
           .bar-success
+
       #import-process
         %span
           .load-text
-            Loading...
+            Importing Data...
             = image_tag "spinner.gif", class: "load-img"
+
+      #import-success.sides-margin.alert.alert-success.no-margin.messages
+        %span Importing users successfully completed
+      #import-errors.sides-margin.alert.alert-danger.no-margin.messages
+        %span The user import failed contact the system administrator
+      #import-finished.messages
+        %span
+          .load-finished
+            = link_to "Return Users", users_path, class: "btn btn-default btn-lg btn-block"
+

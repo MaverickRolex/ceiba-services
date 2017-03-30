@@ -12,28 +12,43 @@ $ ->
     return
 
   $('#upload-launch').click ->
+    $('#upload-errors').css("display", 'none')
+    $('#upload-success').css("display", 'none')
+    $('#import-errors').css("display", 'none')
+    $('#import-finished').css("display", 'none')
     $('#fileupload').fileupload
       dataType: 'json'
-      $('#import-process').css("display", 'inherit')
       progressall: (e, data) ->
         progress = parseInt(data.loaded / data.total * 100, 10)
         $('#progress .bar-success').css 'width', progress + '%'
       done: (e, data) ->
-        $('#import-process').css("display", 'none')
         if data.result.errors
-          $('#import-errors').css("display", 'inherit')
+          $('#upload-errors').css("display", 'inherit')
           i = 0
           while i < data.result.errors.length
-            $('#import-errors').append("<span>" + data.result.errors[i] + "</span>");
+            $('#upload-errors').append("<span>" + data.result.errors[i] + "</span></br>");
             i++
         else
-          $('#import-errors').css("display", 'none')
-          $('#import-success').css("display", 'inherit')
+          $('#upload-success').css("display", 'inherit')
           $('#file-name').text(data.result.name)
-          $('#import-btn').css("display", 'inherit')
-
+          $('#progress').css("display", 'none')
+          $('#import-process').css("display", 'inherit')
           setInterval (->
-            $.ajax("/admin/import_users_poller/" + data.result.id)
-            return
+            $.ajax
+              url: "/admin/import_users_poller/" + data.result.id,
+              dataType: "json"
+              success: (ajax_data, textStatus, jqXHR) ->
+                if (ajax_data.status == "complete")
+                  $('#import-process').css("display", 'none')
+                  $('#import-success').css("display", 'inherit')
+                  $('#import-finished').css("display", 'inherit')
+                if (ajax_data.status == "failed")
+                  $('#import-process').css("display", 'none')
+                  $('#import-errors').css("display", 'inherit')
+                  $('#import-finished').css("display", 'inherit')
+                console.log ajax_data.status
+                console.log textStatus
+                console.log jqXHR.responseText
+                console.log "despues de if"
           ), 5000
     $('#fileupload').click()
