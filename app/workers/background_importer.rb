@@ -8,7 +8,6 @@ class BackgroundImporter
         @import.import
       end
     rescue Exception => exeption_msgs
-      binding.pry
       @user_import = UserImport.find(user_import_id)
       @user_import.update_attributes(status: UserImport.statuses["failed"])
     end

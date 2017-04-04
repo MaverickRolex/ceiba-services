@@ -46,9 +46,5 @@ $ ->
                   $('#import-process').css("display", 'none')
                   $('#import-errors').css("display", 'inherit')
                   $('#import-finished').css("display", 'inherit')
-                console.log ajax_data.status
-                console.log textStatus
-                console.log jqXHR.responseText
-                console.log "despues de if"
           ), 5000
     $('#fileupload').click()
