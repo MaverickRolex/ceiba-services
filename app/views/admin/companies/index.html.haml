@@ -1,40 +1,35 @@
 - content_for :admin_header do
   #search-form.collapse
-    = search_form_for @q, url: service_groups_path do |f|
+    = search_form_for @q, url: companies_path do |f|
       .row
         %ul#form-new-record
           .form-group
             .col-md-6.search-form-left
               .field
-                = f.label :id_eq, "Id", class: 'margin-top-10'
-                = f.text_field :id_eq, class: 'form-control'
                 = f.label :name_cont, "Name", class: 'margin-top-10'
                 = f.text_field :name_cont, class: 'form-control'
+                = f.label :rfc_cont, "Last Name", class: 'margin-top-10'
+                = f.text_field :rfc_cont, class: 'form-control'
                 = f.label :description_cont, "Description", class: 'margin-top-10'
                 = f.text_field :description_cont, class: 'form-control'
-              .field.padding-top-10
-                =f.submit "Search", class: "btn btn-primary pull-right"
-            .col-md-6
-
+                =f.submit "Search", class: "btn btn-primary pull-right margin-top-10"
   .row
     .col-md-12
       .pull-right
         .btn-new-element
-          = link_to "New Service Group", new_service_group_path, class: "btn btn-primary", remote: :true
+          = link_to "New Company", new_company_path, class: "btn btn-primary", remote: :true
       .pull-right
         .search-link
           = link_to "#search-form", "data-target" => "#search-form", "data-toggle" => "collapse" do
-            Advanced Search
+            Advanced search
             %i.fa.fa-search
       .clearfix
 
-.row
-  .col-md-12
-    - content_for :admin_content do
-      = render partial: "admin/service_groups/service_groups_table"
+- content_for :admin_content do
+  = render partial: "admin/companies/companies_table"
 
-  %span#services-paginate.pagination.pagination-sm
-    = will_paginate @service_groups, :previous_label => 'Anterior', :next_label => 'Siguiente', renderer: BootstrapPagination::Rails
+  %span#tables-paginate.pagination.pagination-sm
+    = will_paginate @companies, :previous_label => 'Anterior', :next_label => 'Siguiente', renderer: BootstrapPagination::Rails
 
 #global-modal.modal.fade{:role => "dialog", :tabindex => "-1"}
   .modal-dialog{:role => "document"}
@@ -42,5 +37,5 @@
       .modal-header
         %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
           %span{"aria-hidden" => "true"}
-        %h4.modal-title Service Group
+        %h4.modal-title New Company  
       .modal-body

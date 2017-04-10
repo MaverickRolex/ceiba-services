@@ -1,0 +1,3 @@
+<% if @company.destroyed? %>
+  $("tr[data-company-id='<%= @company.id %>']").remove();
+<% end %>

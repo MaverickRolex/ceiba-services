@@ -6,16 +6,16 @@
   %ul#form-new-record
     .form-group
       .col-md-12
-        = f.label :Titúlo
-        = f.text_field :name, class: 'form-control', placeholder: 'Titúlo'
+        = f.label :name
+        = f.text_field :name, class: 'form-control', placeholder: 'Name'
         %br/
     .form-group
       .col-md-12
-        = f.label :Descripción
-        = f.text_field :description, class: 'form-control', placeholder: 'Descripción'
+        = f.label :description
+        = f.text_field :description, class: 'form-control', placeholder: 'Description'
         %br/
         %br/
     .form-group
       .col-md-12
-        = f.submit "Guardar", class: "btn btn-primary"
-        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Cancelar
+        = f.submit "Save", class: "btn btn-primary"
+        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Cancel

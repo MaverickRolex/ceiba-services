@@ -1,18 +1,18 @@
 - content_for :admins_menu do
   .menu-link
-    %span= link_to "Usuarios", users_path, class: "user-select"
+    %span= link_to "Users", users_path, class: "user-select"
   .menu-link
-    %span= link_to "Negocios", "#", class: "user-select"
+    %span= link_to "Companies", companies_path, class: "user-select"
   .menu-link
-    %span= link_to "Clientes", clients_path, class: "user-select"
+    %span= link_to "Clients", clients_path, class: "user-select"
   .menu-link
-    %span= link_to "Servicios", services_path, class: "user-select"
+    %span= link_to "Services", services_path, class: "user-select"
   .menu-link
-    %span= link_to "Grupos de Servicios", service_groups_path, class: "user-select"
+    %span= link_to "Services Groups", service_groups_path, class: "user-select"
   .menu-link
     %span Reportes
   .menu-link
-    %span Inventarios
+    %span= link_to "Inventory", inventories_path, class: "user-select"
 
 - content_for :users_menu do
   .menu-link

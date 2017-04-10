@@ -6,18 +6,18 @@
           .form-group
             .col-md-6.search-form-left
               .field
-                = f.label :first_name_cont, "Nombre", class: 'margin-top-10'
+                = f.label :first_name_cont, "Name", class: 'margin-top-10'
                 = f.text_field :first_name_cont, class: 'form-control'
-                = f.label :last_name_cont, "Apellido", class: 'margin-top-10'
+                = f.label :last_name_cont, "Last Name", class: 'margin-top-10'
                 = f.text_field :last_name_cont, class: 'form-control'
                 .margin-top-10
                   = f.label :admin_true, "Admin"
                   = f.check_box :admin_true, class: 'no-margin padding-top-10'
             .col-md-6.search-form-right
               .field
-                = f.label :id_cont, "Id", class: 'margin-top-10'
-                = f.text_field :id_cont, class: 'form-control'
-                = f.label :email_cont, "Correo", class: 'margin-top-10'
+                = f.label :id_eq, "ID", class: 'margin-top-10'
+                = f.text_field :id_eq, class: 'form-control'
+                = f.label :email_cont, "Email", class: 'margin-top-10'
                 = f.text_field :email_cont, class: 'form-control'
                 =f.submit "Search", class: "btn btn-primary pull-right margin-top-10"
                 .clearfix
@@ -26,14 +26,14 @@
     .col-md-12
       .pull-right
         .btn-new-element
-          = link_to "Nuevo Usuario", new_user_path, class: "btn btn-primary", remote: :true
+          = link_to "New User", new_user_path, class: "btn btn-primary", remote: :true
       .pull-right
         .btn-new-element
-          = link_to "Importar Usuarios",  new_import_user_path, class: "btn btn-default"
+          = link_to "Import User",  new_import_user_path, class: "btn btn-default"
       .pull-right
         .search-link
           = link_to "#search-form", "data-target" => "#search-form", "data-toggle" => "collapse" do
-            Buqueda Avanzada
+            Advenced Search
             %i.fa.fa-search
       .clearfix
 
@@ -49,5 +49,5 @@
       .modal-header
         %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
           %span{"aria-hidden" => "true"}
-        %h4.modal-title Nuevo Usuario  
+        %h4.modal-title New User
       .modal-body

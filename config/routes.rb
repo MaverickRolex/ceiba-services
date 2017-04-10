@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :services
     resources :service_groups
     resources :companies
+    resources :inventories
     resources :import_users
     get 'poller/:id', to: 'import_users#poller', as: 'poller'
   end
