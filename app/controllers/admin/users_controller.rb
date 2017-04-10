@@ -28,22 +28,6 @@ class Admin::UsersController < Admin::BaseController
     @user.destroy if current_user.admin? && !(current_user == @user)
   end
 
-  def import_users_new
-  end
-
-  def import_users_create
-    @user_import = UserImport.new(
-      file: import_user_params[:import_users],
-      status: UserImport.statuses["incomplete"]
-    )
-    @user_import.save
-    BackgroundImporter.perform_async(@user_import.id)
-  end
-
-  def import_users_poller
-    @user_import = UserImport.find(params[:id])
-  end
-
   private
 
   def user_params
@@ -56,10 +40,6 @@ class Admin::UsersController < Admin::BaseController
     else
       @user.update_attributes(user_params)
     end
-  end
-
-  def import_user_params
-    params.require(:import_file).permit(:import_users)
   end
 
 end

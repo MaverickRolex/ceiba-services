@@ -9,7 +9,7 @@
       %span#file-name No file selected...
 
       .import-form.hidden
-        = form_for :import_file, url: import_users_path, multipart: true do |f|
+        = form_for :import_file, url: import_users_path, method: :post, multipart: true do |f|
           = f.file_field :import_users, id: 'fileupload'
           = submit_tag  "file_import", id: 'import-submit'
 

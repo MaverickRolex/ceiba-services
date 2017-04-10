@@ -40,7 +40,9 @@ gem "twitter-bootstrap-rails"
 gem 'haml'
 gem "font-awesome-rails"
 gem "pry"
+# jquery-fileupload-rails jQuery File Upload for Rails 3.1 Asset Pipeline (Rails 3.2 supported)
 gem "jquery-fileupload-rails"
+# Permit create uploader model for the file selection process and indicates what extensions are allowed
 gem 'carrierwave', '~> 1.0'
 # Roo implements read access for all common spreadsheet in Excelx, OpenOffice and CSV
 gem "roo", "~> 2.7.0"

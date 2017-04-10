@@ -35,7 +35,7 @@ $ ->
           $('#import-process').css("display", 'inherit')
           setInterval (->
             $.ajax
-              url: "/admin/import_users_poller/" + data.result.id,
+              url: "/admin/poller/" + data.result.id,
               dataType: "json"
               success: (ajax_data, textStatus, jqXHR) ->
                 if (ajax_data.status == "complete")
