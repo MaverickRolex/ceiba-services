@@ -1,0 +1,8 @@
+<% if @user_import.new_record? %>
+  { "errors": <%= raw @user_import.errors.full_messages %> }
+<% else %>
+  {
+    "name": "<%= @user_import.file.filename %>",
+    "id": "<%= @user_import.id %>"
+  }
+<% end %>

@@ -29,16 +29,7 @@ class Admin::UsersController < Admin::BaseController
     @user.destroy if current_user.admin? && !(current_user == @user)
   end
 
-  def import_users_new
-  end
-
-  def import_users_create
-  end
-
-  def import_users_poller
-  end
-
-private
+  private
 
   def user_params
      params.

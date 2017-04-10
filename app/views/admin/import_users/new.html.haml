@@ -1,0 +1,34 @@
+.row
+  .col-md-12
+    #upload-users-new
+      #upload-success.alert.alert-success.no-margin.messages
+        %span File upload success
+      #upload-errors.alert.alert-danger.no-margin.messages
+
+      = link_to "Select File", "#", id: 'upload-launch', class: "btn btn-primary import-form"
+      %span#file-name No file selected...
+
+      .import-form.hidden
+        = form_for :import_file, url: import_users_path, method: :post, multipart: true do |f|
+          = f.file_field :import_users, id: 'fileupload'
+          = submit_tag  "file_import", id: 'import-submit'
+
+      #progress
+        .bar
+          .bar-success
+
+      #import-process
+        %span
+          .load-text
+            Importing Data...
+            = image_tag "spinner.gif", class: "load-img"
+
+      #import-success.sides-margin.alert.alert-success.no-margin.messages
+        %span Importing users successfully completed
+      #import-errors.sides-margin.alert.alert-danger.no-margin.messages
+        %span The user import failed contact the system administrator
+      #import-finished.messages
+        %span
+          .load-finished
+            = link_to "Return Users", users_path, class: "btn btn-default btn-lg btn-block"
+
